@@ -1,4 +1,4 @@
-class ExternalDataRepositories < ActiveRecord::Migration
+class ExternalDataRepositoriesv2 < ActiveRecord::Migration
   def change
   create_table :external_data_repositories do | t |
    t.string :category

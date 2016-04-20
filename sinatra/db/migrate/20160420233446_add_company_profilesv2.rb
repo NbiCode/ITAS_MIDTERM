@@ -1,5 +1,5 @@
-class AddCompanyProfiles < ActiveRecord::Migration
-  def change
+class AddCompanyProfilesv2 < ActiveRecord::Migration
+    def change
   create_table :company_profiles do | t |
    t.references :company
    t.string :stringset_1
