@@ -10,3 +10,4 @@ class AddCompaniesv3 < ActiveRecord::Migration
   end  
   end
 end
+ 
