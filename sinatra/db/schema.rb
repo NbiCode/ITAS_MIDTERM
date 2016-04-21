@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420233557) do
+ActiveRecord::Schema.define(version: 20160421162421) do
 
   create_table "companies", force: :cascade do |t|
     t.string  "company_name"
@@ -25,16 +25,19 @@ ActiveRecord::Schema.define(version: 20160420233557) do
 
   create_table "company_profiles", force: :cascade do |t|
     t.integer "company_id"
-    t.string  "stringset_1"
-    t.string  "stringset_2"
-    t.string  "stringset_3"
-    t.string  "stringset_4"
-    t.integer "dataset_1"
-    t.integer "dataset_2"
-    t.integer "dataset_3"
-    t.integer "dataset_4"
-    t.integer "dataset_5"
-    t.integer "dataset_6"
+    t.string  "top_selling_item"
+    t.string  "least_selling_item"
+    t.string  "legal_structure"
+    t.integer "annual_sales"
+    t.integer "avg_unit_price"
+    t.integer "avg_cost_price"
+    t.integer "overheads"
+    t.integer "staff_cost"
+    t.integer "volume_of_trx"
+    t.integer "avg_business_open_hours"
+    t.integer "taxes"
+    t.integer "current_liabilities"
+    t.integer "interest"
     t.date    "created_at"
     t.date    "updated_at"
   end
@@ -61,12 +64,14 @@ ActiveRecord::Schema.define(version: 20160420233557) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.string "category"
-    t.string "value_1"
-    t.string "value_2"
-    t.date   "point_in_time"
-    t.date   "created_at"
-    t.date   "updated_at"
+    t.string  "category"
+    t.string  "text_value_1"
+    t.integer "data_value_1"
+    t.integer "data_value_2"
+    t.date    "point_in_time"
+    t.date    "created_at"
+    t.date    "updated_at"
+    t.integer "company_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -17,4 +17,4 @@ class AddCompanyProfilesv2 < ActiveRecord::Migration
    end
   end
 end
- 
+  
