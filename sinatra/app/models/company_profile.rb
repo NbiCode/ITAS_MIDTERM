@@ -1,4 +1,5 @@
 class CompanyProfile < ActiveRecord::Base
 
-belongs_to :company   
+belongs_to :company
+   
 end 
