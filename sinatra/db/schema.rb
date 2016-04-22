@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421231144) do
+ActiveRecord::Schema.define(version: 20160422152826) do
 
   create_table "companies", force: :cascade do |t|
     t.string  "company_name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160421231144) do
     t.date    "updated_at"
     t.integer "location_id"
     t.integer "industry_id"
+    t.string  "username"
+    t.string  "password"
   end
 
   create_table "company_profiles", force: :cascade do |t|
