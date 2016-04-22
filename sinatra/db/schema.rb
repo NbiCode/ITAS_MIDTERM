@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422152826) do
+ActiveRecord::Schema.define(version: 20160422162804) do
 
   create_table "companies", force: :cascade do |t|
     t.string  "company_name"
@@ -49,6 +49,25 @@ ActiveRecord::Schema.define(version: 20160422152826) do
     t.string "value_2"
     t.date   "created_at"
     t.date   "updated_at"
+  end
+
+  create_table "external_datas", force: :cascade do |t|
+    t.integer "company_id"
+    t.string  "category"
+    t.text    "text_value"
+    t.integer "number_value"
+    t.date    "created_at"
+    t.date    "updated_at"
+  end
+
+  create_table "external_sources", force: :cascade do |t|
+    t.string  "category"
+    t.text    "cat_value"
+    t.string  "cat_impact"
+    t.integer "number_impact"
+    t.date    "created_at"
+    t.date    "updated_at"
+    t.integer "company_id"
   end
 
   create_table "industries", force: :cascade do |t|
