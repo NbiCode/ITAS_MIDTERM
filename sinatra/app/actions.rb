@@ -8,8 +8,8 @@ helpers do
 
   def get_sentences
     @sentences = []
-    doc = Nokogiri::HTML(open("https://en.wikipedia.org/wiki/Small_business"))
-    regex = /[^.]*small business[^.]*\./i
+    doc = Nokogiri::HTML(open("https://www.franchisehelp.com/industry-reports/pizza-industry-report/"))
+    regex = /[^.]*Sizzlin[^.]*\./i
     a = doc.traverse { |x| 
       if x.text =~ regex
         @sentences << x
