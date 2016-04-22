@@ -29,6 +29,7 @@ helpers do
   def debt_ratio
     @company.CompanyProfile.current_liabilities/net_profit
   end 
+end   
 
 # Homepage (Root path)
 get '/' do
