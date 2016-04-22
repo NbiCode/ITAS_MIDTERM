@@ -11,6 +11,10 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 
+gem 'nokogiri'
+gem 'open-uri-cached'
+gem 'restclient'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script type="text/javascript" src="javascript/script.js"></script>
+    
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <style>
+			{
+				background-color:#BCDFDB;
+				color: #025C7F;
+				font-family:verdana,arial;
+			}
+			#quotes
+			{
+				margin:0;
+				padding:100px;
+				font-size:20px;
+				position:relative;
+			}
+			.textItem
+			{
+				position:absolute;
+				display:none;
+			}
+			a
+			{
+				color:#000;
+				font-size:15px;
+			}
+    </style>
+
+
+</head>
+
+
+
+
+
+
+
+<h1>dashboard</h1>
+
+<strong>User Name:</strong><%= session[:username] %>
+<strong>User Password:</strong><%= session[:password] %>
+<%= session[:email] %>
+
+
+
+<div class="company_profile">
+    <small><%= @company.id %></small><br>
+    <strong>Top Seller:</strong><%= @company.top_selling_item %>
+    <p>
+      <strong>Annual Sales: </strong> <%= @company.annual_sales %>
+    </p>
+    <p>
+      <strong>Taxes: </strong><%= @company.taxes %>
+    </p>
+  </div>
+
+
+  <div id="quotes"><h3><%= @sentences[49] %>"</h3><div class="textItem">
+
+  <div id="quotes"><h3><%= @sentences[80] %>"</h3><div class="textItem">
+
+  <div id="quotes"><h3><%= @sentences[120] %>"</h3><div class="textItem">
+
+
