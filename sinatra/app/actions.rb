@@ -10,6 +10,34 @@ include Ai4r::Clusterers
 
 helpers do
 
+DATA_LABELS_ID3 = [ 'Coffee', 'Discount', 'Time', 'Revenue_Goes'  ]
+
+DATA_ITEMS_ID3 = [  
+       ['AMERICANO',  '<30',      'MORNING', 'UP'],
+       ['CUPPACCINO',     '<30',      'MORNING', 'UP'],
+       ['CUPPACCINO',     '<30',      'EVENING', 'UP'],
+       ['AMERICANO',  '<30',      'MORNING', 'UP'],
+       ['AMERICANO',  '<30',      'MORNING', 'UP'],
+       ['CUPPACCINO',     '[30-50)',  'MORNING', 'UP'],
+       ['AMERICANO',  '[30-50)',  'EVENING', 'UP'],
+       ['CUPPACCINO',     '[30-50)',  'EVENING', 'UP'],
+       ['AMERICANO',  '[30-50)',  'EVENING', 'DOWN'],
+       ['CUPPACCINO',     '[50-80]', 'MORNING', 'DOWN'],
+       ['AMERICANO',  '[50-80]', 'EVENING', 'DOWN'],
+       ['AMERICANO',  '[50-80]', 'MORNING', 'DOWN'],
+       ['CUPPACCINO',     '[50-80]', 'EVENING', 'DOWN'],
+       ['AMERICANO',  '[50-80]', 'EVENING', 'DOWN'],
+       ['CUPPACCINO',     '>80',      'EVENING', 'DOWN']
+     ]
+
+
+  def calc_id3  
+    data_set = Ai4r::Data::DataSet.new(:data_items => DATA_ITEMS_ID3, :data_labels => DATA_LABELS_ID3)
+    id3 = Ai4r::Classifiers::ID3.new.build(data_set)
+    id3.get_rules
+  end   
+
+
 DATA_LABELS = [ 'Type', 'Size','Promotion_Discount','Month_to_Month']
 
 
@@ -31,13 +59,15 @@ DATA_ITEMS = [
        ['CubanBlend',     'L',    'Evening',       'Decrease Revenue' ]
      ]
 
+
+
+  
+
   def calc_prob(coffee,size,time)
     data_set = Ai4r::Data::DataSet.new(:data_items => DATA_ITEMS, :data_labels => DATA_LABELS)
     b = NaiveBayes.new.set_parameters({:m=>3}).build data_set
     b.get_probability_map([coffee,size,time])
   end
-
-
 
   def get_sentences
     @sentences = []
@@ -51,9 +81,6 @@ DATA_ITEMS = [
   end
  
 end
-
-
-
 
 
 
@@ -112,8 +139,15 @@ post '/dashboard/prob' do
   erb :'/dashboard/result'
 end
  
+ # get '/dashboard/patterns' do
+ #    @id3 = calc_id3
+ #    redirect '/dashboard/machine'
+ # end
 
-
+get '/dashboard/machine' do
+   @id3 = calc_id3
+  erb :'/dashboard/machine'
+end
 
 =begin
 
