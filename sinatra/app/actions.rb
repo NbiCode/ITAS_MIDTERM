@@ -59,7 +59,6 @@ end
 get '/dashboard' do
   get_sentences 
   if session[:company_id]
-  binding.pry
     @company = CompanyProfile.find_by(session[:company_id])
   else
     redirect '/register'
