@@ -75,8 +75,8 @@ $(document).ready(function()
             {
                 if($('.textItem').length > 1)
                 {
-                    $('.textItem:first').addClass('current').fadeIn(1000);
-                    setInterval('textRotate()', 3000);
+                    $('.textItem:first').addClass('current').fadeIn(10000);
+                    setInterval('textRotate()', 10000);
                 }
             }
             function textRotate()
@@ -84,12 +84,12 @@ $(document).ready(function()
                 var current = $('#quotes > .current');
                 if(current.next().length == 0)
                 {
-                    current.removeClass('current').fadeOut(1000);
-                    $('.textItem:first').addClass('current').fadeIn(1000);
+                    current.removeClass('current').fadeOut(10000);
+                    $('.textItem:first').addClass('current').fadeIn(10000);
                 }
                 else
                 {
-                    current.removeClass('current').fadeOut(1000);
-                    current.next().addClass('current').fadeIn(1000);
+                    current.removeClass('current').fadeOut(10000);
+                    current.next().addClass('current').fadeIn(10000);
                 }
             }

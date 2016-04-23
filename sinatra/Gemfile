@@ -14,6 +14,7 @@ gem 'tux'
 gem 'nokogiri'
 gem 'open-uri-cached'
 gem 'restclient'
+gem 'ai4r'
 
 group :development, :test do
   gem 'pry'
