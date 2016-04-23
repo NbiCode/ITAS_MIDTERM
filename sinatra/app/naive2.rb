@@ -4,7 +4,7 @@ include Ai4r::Classifiers
 include Ai4r::Data
 include Ai4r::Clusterers
 
-
+ 
 
 DATA_LABELS = [ 'Type', 'Size','Promotion_Discount','Month_to_Month']
 

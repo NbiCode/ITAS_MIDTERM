@@ -3,8 +3,41 @@ require 'pry'
 require 'nokogiri'
 # require 'restclient'
 require 'open-uri/cached'
+require 'ai4r'
+include Ai4r::Classifiers
+include Ai4r::Data
+include Ai4r::Clusterers
 
 helpers do
+
+DATA_LABELS = [ 'Type', 'Size','Promotion_Discount','Month_to_Month']
+
+
+DATA_ITEMS = [  
+       ['Cuppaccino',     'S',    'Morning',       'Increase Revenue'],
+       ['Cuppaccino',     'M',    'Morning',       'Decrease Revenue'],
+       ['Cuppaccino',     'L',    'Morning',       'Increase Revenue' ],
+       ['Americano',      'S',    'Morning',       'Increase Revenue' ],
+       ['Americano',      'M',    'Morning',       'Increase Revenue' ],
+       ['Americano',      'L',    'Morning',       'Decrease Revenue'  ],
+       ['Espresso',       'S',    'Morning',       'Increase Revenue' ],
+       ['Espresso',       'M',    'Morning',       'Increase Revenue' ],
+       ['Espresso',       'L',    'Morning',       'Increase Revenue' ],
+       ['EithopianBlend', 'S',    'Morning',       'Increase Revenue' ],
+       ['EithopianBlend', 'M',    'Morning',       'Decrease Revenue'  ],
+       ['EithopianBlend', 'L',    'Morning',       'Decrease Revenue'  ],
+       ['CubanBlend',     'S',    'Morning',       'Increase Revenue' ],
+       ['CubanBlend',     'M',    'Morning',       'Increase Revenue' ],
+       ['CubanBlend',     'L',    'Evening',       'Decrease Revenue' ]
+     ]
+
+  def calc_prob(coffee,size,time)
+    data_set = Ai4r::Data::DataSet.new(:data_items => DATA_ITEMS, :data_labels => DATA_LABELS)
+    b = NaiveBayes.new.set_parameters({:m=>3}).build data_set
+    b.get_probability_map([coffee,size,time])
+  end
+
+
 
   def get_sentences
     @sentences = []
@@ -16,8 +49,11 @@ helpers do
       end
     }
   end
-
+ 
 end
+
+
+
 
 
 
@@ -66,6 +102,16 @@ get '/dashboard' do
   # @company_profiles = CompanyProfile.find_by(session[id: params[:id]])
   erb :'dashboard/index'
 end
+
+get '/dashboard/prob' do
+    erb :'/dashboard/prob'
+end
+
+post '/dashboard/prob' do
+  @result = calc_prob(params[:coffee],params[:size],params[:time])
+  erb :'/dashboard/result'
+end
+ 
 
 
 
