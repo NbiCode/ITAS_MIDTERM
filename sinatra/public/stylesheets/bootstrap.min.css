@@ -8036,6 +8036,7 @@ button.close {
     height:  40px;
     width: 100%;
     margin-top: 10px;
+    clear: both;
 }
 
 .footer ul {
@@ -8115,6 +8116,69 @@ a
   color:#000;
   font-size:15px;
 }
+
+/* MARIE'S CSS FOR REGISTER PAGE */
+
+.textbox {
+    border-radius: 5px;
+    border: 2px solid red;  /* Sammi to change to brick red on his computer */
+    /*align-items: 200px;*/
+    /*display: inline-block;*/
+    width: 300px;
+}
+
+.boxdiv {   
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+.formfont1 {
+    font: Catamaran;
+    text-align: center;
+}
+
+.formfont2 {
+    font: Catamaran;
+    text-align: center;
+    padding-right: 150px;
+}
+
+.formalign {
+    padding-left: 310px;
+}
+
+.buttonsubmit {   
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    width: 500px;
+    text-align: center;
+}
+
+label {
+    width: 200px;
+}
+
+.leftform {
+    padding-bottom: 20px;
+    padding-left: 100px;
+    float: left;
+    width: 50% 
+}
+
+.rightform {
+    padding-bottom: 20px;
+    float: right;
+    width: 50%
+}
+
+
+
+
+
+
+
 
 
 
