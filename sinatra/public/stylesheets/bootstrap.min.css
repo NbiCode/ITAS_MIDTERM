@@ -10,9 +10,6 @@ html {
     -ms-text-size-adjust: 100%
 }
 
-body {
-    margin: 0
-}
 
 a {
     background-color: transparent
@@ -7990,7 +7987,7 @@ button.close {
     width: 1150px;
     height: 400px;
     margin-left: 225px;
-    margin-top: -20px;
+    margin-top: -35px;
     border-radius: 1px;
 }
 
@@ -8016,6 +8013,7 @@ button.close {
 }
 
 /* HEADER COLOUR*/
+
 .navbar-inverse {
     background-color: #8B0000;
     border-color: #8B0000;
@@ -8023,9 +8021,16 @@ button.close {
 }
 
 /*Company Name*/
+
 .navbar-inverse .navbar-nav {
     color: #FFFFFF;
     font-size: 1em;
+}
+
+/* Index Text on Landing Page */
+
+.col-lg-12 p {
+	font-size: 1.2em;
 }
 
 /* Footer applications */
@@ -8034,8 +8039,10 @@ button.close {
     background-color: #8B0000;
     border-color: #8B0000;
     height:  40px;
-    width: 100%;
+    width: 110%;
     margin-top: 10px;
+    margin-left: -8px;
+    clear: both;
 }
 
 .footer ul {
@@ -8060,7 +8067,7 @@ button.close {
     height:  300px
 }
 
-.container-content h1,p {
+.container-content h1, p {
     margin-left: 225px;
     font-family: Catamaran;
 }
@@ -8098,26 +8105,189 @@ button.close {
 
 
 /* DAVES CSS FOR WEBSCRAPE */
-#quotes
-{
-  margin:0;
+#quotes {
+  margin-top: -50px;
+ /* margin:0;
   padding:100px;
   font-size:20px;
-  position:relative;
+  position:relative;*/
 }
-.textItem
-{
+.textItem {/*
   position:absolute;
-  display:none;
+  display:none;*/
+  font-size: 0.8em;
 }
-a
-{
+/*
+a {
   color:#000;
   font-size:15px;
 }
+*/
+/* Dashboard Applications */
+.dashboard {
+  margin-left: 225px;
+}
 
+.probability li {
+  list-style-type: circle;
+}
 
+#chart_div, #chat_div2, #chart_div3, map {
+  display: inline;
+}
 
+#separate {
+  margin-left: 15px;
+  width: 800px;
+  height: 15px;
+  border-bottom: 1px solid #D3D3D3;
+  margin-bottom: 25px;
+}
 
+.charts {
+  margin-top: 25px;
+  margin-left: 125px;
+}
+
+#spacer {
+  margin-bottom: 25px;
+}
+
+#divider {
+  margin-left: 114px;
+  width: 800px;
+  border-bottom: 1px solid #D3D3D3;
+  margin-bottom: 25px;
+}
+
+#line_divider {
+  margin-left: 250px;
+  width: 800px;
+  border-bottom: 1px solid #D3D3D3;
+  margin-bottom: 25px;
+}
+  
+#pic_shifter {
+  margin-left: 200px;
+}
+
+/* MARIE'S CSS FOR REGISTER PAGE */
+
+.textbox {
+    border-radius: 5px;
+    border: 2px solid #8B0000; 
+    /*align-items: 200px;*/
+    /*display: inline-block;*/
+    width: 300px;
+}
+
+.boxdiv {   
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+.formfont1 {
+    font: Catamaran;
+    text-align: center;
+}
+
+.formfont2 {
+    font: Catamaran;
+    text-align: center;
+    padding-right: 150px;
+}
+
+.formalign {
+    padding-left: 310px;
+}
+
+.buttonsubmit {   
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    width: 0px;
+    text-align: center;
+}
+
+label {
+    width: 200px;
+}
+
+.leftform {
+    padding-bottom: 20px;
+    padding-left: 100px;
+    float: left;
+    width: 50%; 
+}
+
+.rightform {
+    padding-bottom: 20px;
+    float: right;
+    width: 50%;
+}
+
+.centerform {
+  	margin-top: 425px;
+  	margin-left:  700px;
+}
+
+.register-container {
+  height: 625px;
+  margin-top: 25px;
+  border: 1px solid #FFFFFF;
+}
+
+.register {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.register a {
+    text-decoration: none;
+    color: #8B0000;
+}
+
+.register a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+/*  PROB Applications */
+.prob-container {
+    height: 675px;
+  	margin-top: 25px;
+  	margin-left: 425px;
+  	border: 1px solid #FFFFFF;
+}
+
+.prob-container .btn {
+  border: 1px solid #8B0000;
+  margin-left:  300px;
+}
+
+.result {
+  margin-top: 150px;
+}
+
+/*  Machine applications */
+.machine-container {
+  height: 675px;
+}
+
+.machine-container h1 {
+  margin-left:  225px;
+  margin-bottom:  30px;
+}
+
+.machine-container p {
+  margin-bottom: 30px;
+  font-size: 1.2em;
+}
+
+.id3 th, td {
+  padding:  15px;
+  border-bottom: 1px solid #ddd;
+}
 
 /*# sourceMappingURL=bootstrap.min.css.map */

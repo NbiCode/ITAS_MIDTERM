@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+
+
+
+<h1>dashboard</h1>
+
+<strong>User Name:</strong><%= session[:username] %>
+<strong>User Password:</strong><%= session[:password] %>
+<%= session[:email] %>
+
+
+<div class="probability">
+  <p><a href="/dashboard/prob">Probability Check</a></p>
+  <p><a href="/dashboard/machine">Understanding Revenue Patterns</a></p>
+</div>
+
+<div id="quotes">
+  <div class="textItem"><%= @sentences[49] %></div>
+
+  <div class="textItem"><%= @sentences[55] %></div>
+
+  <div class="textItem"><%= @sentences[75] %></div>
+</div
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				setupRotator();
+			});	
+			function setupRotator()
+			{
+				if($('.textItem').length > 1)
+				{
+					$('.textItem:first').addClass('current').fadeIn(1000);
+					setInterval('textRotate()', 3000);
+				}
+			}
+			function textRotate()
+			{
+				var current = $('#quotes > .current');
+				if(current.next().length == 0)
+				{
+					current.removeClass('current').fadeOut(1000);
+					$('.textItem:first').addClass('current').fadeIn(1000);
+				}
+				else
+				{
+					current.removeClass('current').fadeOut(1000);
+					current.next().addClass('current').fadeIn(1000);
+				}
+			}
+		</script>
+	</body>
+</html>
+  

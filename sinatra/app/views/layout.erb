@@ -8,12 +8,12 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     
     <title>LHL Midterm Project</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:400' rel='stylesheet' type='text/css'>
     <!-- Custom CSS -->
     <style>
@@ -52,26 +52,30 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
+                
                 <ul class="nav navbar-nav navbar-right">
-                   <form action="/login" method="post" class="navbar-form"  id="register-form" novalidate="novalidate" role="form">
+                   <form action="/logout" method="post" class="navbar-form"  id="register-form" novalidate="novalidate" role="form">
                      <div class="form-group">
-                     <label class="sr-only" for="username">User Name:</label>               
+                     <!--<label class="sr-only" for="username">User Name:</label>               
                      <input type="text" name="username" class="form-control" id="username" placeholder="Enter User Name" required>
                      </div>
                      <div class="form-group">
                      <label class="sr-only"for="password-field">Password:</label>               
                      <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter Password">
                      </div>
-                     <button type="submit" class="button">Sign In</button>
-                     <button type="submit" class="button"><a href="/register">Register</a></button>
-                  </form>                  
+                     <button type="submit" class="button">Sign In</button>-->
+                     <button type="submit" class="button"><a href="/dashboard">Dashboard</a></button>
+                     <button type="submit" class="button"><a href="/logout">Logout</a></button>
+                     </div>
+                   </form>                  
                </ul>
+           
             </div>
         </div>
         <!-- /.container -->
     </nav>
 
-      <%= yield %>
+  <%= yield %>
   
   
       <div class="footer">
@@ -79,7 +83,7 @@
           <ul>
               <li>&copy; 2016 insightER Intelligent Services</li>
               <li>insighter.com</li>
-              <li id="pull-left">9 Insightful Rd | Know City, NJ 08401</li>
+              <li id="pull-left">9 Insightful Rd &nbsp;| &nbsp; Know City, NJ 08401</li>
           </ul>
       </div>
     </div>

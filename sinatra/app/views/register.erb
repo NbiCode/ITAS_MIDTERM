@@ -1,11 +1,60 @@
-<h1>Register</h1>
-<h2>Contact Information</h2>
-  <form method="post" action="/register">
-  	<label for="">First Name</label>
-  	<input type="text" name="first_name">
-  	<label for="">Last Name</label>
-  	<input type="text" name="last_name">
-  	<label for="">Email</label>
-  	<input type="email" name="email">
-  	<input type="submit">
+<h1 class="formfont1">Register with <i>insightER</i></h1>
+  
+  <div class="register-container">
+
+	<div class="leftform"> <!-- column 1 -->
+		<h3 class="formfont1">Step 1: Contact Information</h3>
+ 	    <form method="post" action="/dashboard">
+  		<div class="boxdiv"> 
+    		<label>Company:</label>
+    		<input class="textbox" type="text" name="company_name">
+  		</div>
+  		<div class="boxdiv">
+  			<label>First Name:</label>
+  			<input class="textbox" type="text" name="first_name">
+  		</div> 
+  		<div class="boxdiv"> 
+  			<label>Last Name:</label>
+  			<input class="textbox" type="text" name="last_name">
+  		</div>
+  		<div class="boxdiv">  
+  			<label>E-mail:</label>
+  			<input class="textbox" type="email" name="email">
+  		</div>  
+  		<div class="boxdiv"> 
+    		<label>Website URL:</label>
+    		<input class="textbox" type="text" name="url">
+  		</div>
+	</div> 
+
+	<div class="rightform"> <!-- column 2 -->
+  		<h3 class="formfont2">Step 2: Business Information</h3>
+  		<div class="boxdiv"> 
+    		<label>Location:</label>
+    		<input class="textbox" type="text" name="location">
+  		</div>
+  		<div class="boxdiv"> 
+    		<label>Industry:</label>
+    		<input class="textbox" type="text" name="industry">
+  		</div>
+  		<div class="boxdiv">
+    		<label>Legal Structure:</label>
+    		<input class="textbox" type="text" name="legal_structure">
+  		</div> 
+  		<div class="boxdiv"> 
+   		 	<label>Annual Sales:</label>
+    		<input class="textbox" type="text" name="annual_sales">
+  		</div>
+  		<div class="boxdiv">  
+    		<label>Transaction Volume:</label>
+    		<input class="textbox" type="email" name="volume_of_trx">
+  		</div>  
+	</div>
+	<div class="centerform">
+    		<button type="submit" class="register"><a href="/">Register</a></button> 
+  	</div>
   </form>
+</div>
+
+  		
+

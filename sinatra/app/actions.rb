@@ -8,6 +8,8 @@ include Ai4r::Classifiers
 include Ai4r::Data
 include Ai4r::Clusterers
 
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 helpers do
 
 DATA_LABELS_ID3 = [ 'Coffee', 'Discount', 'Time', 'Revenue_Goes'  ]
@@ -60,9 +62,6 @@ DATA_ITEMS = [
      ]
 
 
-
-  
-
   def calc_prob(coffee,size,time)
     data_set = Ai4r::Data::DataSet.new(:data_items => DATA_ITEMS, :data_labels => DATA_LABELS)
     b = NaiveBayes.new.set_parameters({:m=>3}).build data_set
@@ -81,8 +80,6 @@ DATA_ITEMS = [
   end
  
 end
-
-
 
 get '/' do
   if session[:company_id]
@@ -126,128 +123,33 @@ get '/dashboard' do
   else
     redirect '/register'
   end
-  # @company_profiles = CompanyProfile.find_by(session[id: params[:id]])
-  erb :'dashboard/index'
+  erb :'dashboard'
 end
 
-get '/dashboard/prob' do
-    erb :'/dashboard/prob'
+get '/prob' do
+    erb :'/prob'
 end
 
-post '/dashboard/prob' do
+post '/prob' do
   @result = calc_prob(params[:coffee],params[:size],params[:time])
-  erb :'/dashboard/result'
+  erb :'/prob'
 end
- 
- # get '/dashboard/patterns' do
- #    @id3 = calc_id3
- #    redirect '/dashboard/machine'
- # end
 
-get '/dashboard/machine' do
+get '/result' do
+  erb :'/result'
+end
+
+get '/machine' do
    @id3 = calc_id3
-  erb :'/dashboard/machine'
+  erb :'/machine'
 end
 
-=begin
-
-THIS CODE WORKS
-
-post '/login' do
-  session[:username] = params[:username]
-  redirect '/dashboard/:username'
+get '/tracker' do
+  get_sentences
+  erb :tracker
 end
 
-get '/dashboard/:username' do
-  @user = User.all
-  erb :dashboard 
-end
-
-===================
-
-THIS CODE WORKS
-get '/' do
+get '/logout' do
   erb :index
 end
-
-post '/login' do
-  session[:username] = params[:username]
-  redirect '/dashboard/:username'
-end
-
-get '/dashboard/:username' do
-  @company_profiles = CompanyProfile.all
-  erb :dashboard 
-end
-
-=================
-
-THIS CODE WORKS
-
-get '/' do
-  erb :index
-end
-
-post '/login' do
-  redirect '/dashboard'
-end
-
-get '/dashboard' do
-  @company_profiles = CompanyProfile.all
-  erb :dashboard
-end
-
-
-=====================
-
-THIS CODE WORKS AS WELL
-
-get '/' do
-  erb :index
-end
-
-post '/login' do
-  session[:username] = params[:username]
-  session[:password] = params[:password]
-  session[:email] = params[:email]
-  redirect '/dashboard/:username'
-end
-
-get '/dashboard/:username' do
-  erb :dashboard
-end
-
-=====================
-
-THIS CODE WORKS TOO
-get '/' do
-  erb :index
-end
-
-post '/login' do
-  redirect '/dashboard'
-end
-
-get '/dashboard' do
-  @companies = Company.all
-  erb :dashboard
-end
-
-======================
-THIS CODE ALSO WORKS
-
-get '/' do
-  erb :index
-end
-
-post '/login' do
-  redirect '/dashboard'
-end
-
-get '/dashboard' do
-  @company_profiles = CompanyProfile.all
-  erb :dashboard
-end
-
-=end
 
